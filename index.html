@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Mobile Number Validations -->
+
+    <form>
+        Enter Mobile Number: <input type="text" id="txt1"><br><br>
+        <div id="div1" style="visibility: hidden;"></div>
+
+        Enter Email: <input type="text" id="txt2"><br><br>
+        <div id="div2" style="visibility: hidden;"></div>
+
+        <input type="button" value="submit" onclick="validate()">
+    </form>
+</body>
+
+<script>
+    function validate() {
+        let text = document.getElementById("txt1").value;
+        const regex = /^[0]?[6789]\d{9}$/;
+
+        if (regex.test(text)) {
+            document.getElementById("div1").innerHTML = "Mobile Number is Valid";
+            document.getElementById("div1").style.visibility = 'visible';
+            document.getElementById("div1").style.color = 'green';
+        }
+        else {
+            document.getElementById("div1").innerHTML = "Mobile Number is Invalid";
+            document.getElementById("div1").style.visibility = 'visible';
+            document.getElementById("div1").style.color = 'red';
+
+        }
+
+        let text2 = document.getElementById("txt2").value;
+        const regexForEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (regexForEmail.test(text2)) {
+            document.getElementById("div2").innerHTML = "Email is Valid";
+            document.getElementById("div2").style.visibility = 'visible';
+            document.getElementById("div2").style.color = 'green';
+        }
+        else {
+            document.getElementById("div2").innerHTML = "Email is Invalid";
+            document.getElementById("div2").style.visibility = 'visible';
+            document.getElementById("div2").style.color = 'red';
+
+        }
+
+    }
+
+</script>
+
+</html>
